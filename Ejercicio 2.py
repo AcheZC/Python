@@ -3,7 +3,7 @@ DOCSTRING
 TITLE:          EJERCICIO 2
 AUTHOR:         HUGO DANIEL BUSTAMANTE NIETO
 DESCRIPTION:    PRIORITY SORTER
-VERSION:        0.0.5 (Versiones nuevas.Actualizaciones.Correcciones)
+VERSION:        0.0.9 (Versiones nuevas.Actualizaciones.Correcciones)
 NOTA:           DADO UN ARREGLO DE ENTRADA, ORDENAR POR PRIORIDAD UNICAMENTE LOS ELEMENTOS QUE CUMPLEN LOS CRITERIOS ESTABLECIDOS
 GUIA DE ESTILO: PEP8
 """
@@ -226,78 +226,78 @@ def recorreParametros(criterio, entrada):
                         else:
                             listanormal[contadict] = dic
                             break
-            if key == var3:
-                    if operador3 == '=':
-                        if dic[key] == val3:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador3 == '>=':
-                        if dic[key] >= val3:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador3 == '<=':
-                        if dic[key] <= val3:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador3 == '<':
-                        if dic[key] <= val3:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador3 == '>':
-                        if dic[key] <= val3:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-            if key == var4:
-                    if operador4 == '=':
-                        if dic[key] == val4:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador4 == '>=':
-                        if dic[key] >= val4:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador4 == '<=':
-                        if dic[key] <= val4:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador4 == '<':
-                        if dic[key] <= val4:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
-                    elif operador4 == '>':
-                        if dic[key] <= val4:
-                            listordenar[contadict] = dic
-                            break
-                        else:
-                            listanormal[contadict] = dic
-                            break
+            # if key == var3:
+            #         if operador3 == '=':
+            #             if dic[key] == val3:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador3 == '>=':
+            #             if dic[key] >= val3:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador3 == '<=':
+            #             if dic[key] <= val3:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador3 == '<':
+            #             if dic[key] <= val3:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador3 == '>':
+            #             if dic[key] <= val3:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            # if key == var4:
+            #         if operador4 == '=':
+            #             if dic[key] == val4:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador4 == '>=':
+            #             if dic[key] >= val4:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador4 == '<=':
+            #             if dic[key] <= val4:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador4 == '<':
+            #             if dic[key] <= val4:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
+            #         elif operador4 == '>':
+            #             if dic[key] <= val4:
+            #                 listordenar[contadict] = dic
+            #                 break
+            #             else:
+            #                 listanormal[contadict] = dic
+            #                 break
         
         #Cuenta cuantos diccionarios hay para poder agregar el diccionario al indice de la lista actual
         contadict += 1
@@ -342,8 +342,6 @@ def junta(listas):
             containdice += 1
         conta += 1
 
-    ##################################################################################ORDENAR pasando la lista lisordenar
-
     #Setea a 0 los contadores de nuesvo
     conta = 0
     containdice = 0
@@ -361,7 +359,20 @@ def junta(listas):
 
             containdice += 1
         conta += 1
-    print(ordena(lisordenar))
+    
+    listaordenada = ordena(lisordenar)
+    #Se eliminan los numeros que sobran en la lista
+    for i in lisnormal:
+            for i in lisnormal:
+                for i in lisnormal:
+                    if isinstance(i,int):
+                        #SE REQUIRIO DE FUNCION REMOVE POR EXCESO DE TIEMPO EN PROGRAMAR 
+                        lisnormal.remove(i)
+
+    for dic in listaordenada:
+        print(dic)
+    for dic in lisnormal:
+        print(dic)
 
 def ordena(lista):
     """
@@ -376,36 +387,54 @@ def ordena(lista):
     contlisa = 0
     contindex = 0
     previous = 0
-    cont = 10
+    cont = 5
 
-    while cont >= 0:
-        contlisa= 0
-        contindex = 0
-        previous = 0
+    for i in lista:
+            for i in lista:
+                #SE REQUIRIO DE FUNCION ISINSTANCE POR EXCESO DE TIEMPO EN PROGRAMAR 
+                if isinstance(i,int):
+                    #SE REQUIRIO DE FUNCION REMOVE POR EXCESO DE TIEMPO EN PROGRAMAR 
+                    lista.remove(i)
 
-        for dic in lista:
-            try:
-                for key in dic:
-                        if key == 'priority':
-                            # previous = previous + key
-                            a = dic[key] #YA ACCEDIMOS AL VALOR
-                            #Revisamos que el valor actual en priority sea menor que el anterior 
-                            if a >= previous:
-                                #Intercambiamos los valores de los diccionarios  
-                                indice = contindex - 1
-                                # b = lista[indice] # b = dic[key +1]
-                                # c = lista[contindex]                    
-                                lista[indice], lista[contindex] = lista[contindex], lista[indice]
-                            contindex += 1
-            except:
-                continue
-            previous = a
-            # print(a)
-            contlisa += 1
-        cont -= 1
+    # while cont >= 0:
+    #     contlisa= 0
+    #     contindex = 0
+    #     previous = 0
+
+    #     for dic in lista:
+    #         try:
+    #             for key in dic:
+    #                     if key == 'priority':
+    #                         a = dic[key] #YA ACCEDIMOS AL VALOR
+
+    #                         #Revisamos que el valor actual en priority sea menor que el anterior 
+    #                         if a <= previous:
+    #                             #Intercambiamos los valores de los diccionarios  
+    #                             indice = contindex - 1
+    #                             lista[indice], lista[contindex] = lista[contindex], lista[indice]
+    #                         contindex += 1
+    #         except:
+    #             continue
+    #         previous = a
+    #         # print(a)
+    #         contlisa += 1
+    #     cont -= 1
     
-    return(lista) #print(lista)
+    #SE REQUIRIO DE FUNCION SORTED, LAMBDA, MAX Y LIST POR EXCESO DE TIEMPO EN PROGRAMAR 
+
+    #SE REQUIRIO DE FUNCION APPEND POR EXCESO DE TIEMPO EN PROGRAMAR
+    #Elimina valores repetidos en caso de haberlos
+    result = []
+    for item in lista:
+        if item not in result:
+            result.append(item)
+
+    #
+    res = sorted(result, key=lambda dicts: min(list(dicts.values()))) 
+    # res = sorted(res, key=lambda dicts: max(list(dicts.values()))) 
+
+    #Retorna los valores ordenados
+    return(res)
     
 
-junta(recorreParametros(criteria2, entry))
-
+junta(recorreParametros(criteria1, entry))
