@@ -3,7 +3,7 @@ DOCSTRING
 TITLE:          EJERCICIO 2
 AUTHOR:         HUGO DANIEL BUSTAMANTE NIETO
 DESCRIPTION:    PRIORITY SORTER
-VERSION:        0.0.2 (Versiones nuevas.Actualizaciones.Correcciones)
+VERSION:        0.0.5 (Versiones nuevas.Actualizaciones.Correcciones)
 NOTA:           DADO UN ARREGLO DE ENTRADA, ORDENAR POR PRIORIDAD UNICAMENTE LOS ELEMENTOS QUE CUMPLEN LOS CRITERIOS ESTABLECIDOS
 GUIA DE ESTILO: PEP8
 """
@@ -151,6 +151,7 @@ def recorreParametros(criterio, entrada):
     for dic in entrada:
         #Recorre los diccionarios uno a uno
         for key in dic:
+            #SE PUEDE RESUMIR A TRAVES DE CREAR FUNCION CON MAS TIEMPO
             #Compara los keys contra los criterios de ordenacion dados
             if key == var1:
                     if operador1 == '=':
@@ -304,7 +305,7 @@ def recorreParametros(criterio, entrada):
     #Se retornan las listas divididas para ordenar
     return(listordenar, listanormal)
 
-#Funcion de ordenamiento 
+#Funcion de separación de listas  
 def junta(listas):
     """
     DOCSTRING
@@ -356,15 +357,55 @@ def junta(listas):
             for key in i: 
                 if 'priority' in key:
                     lisnormal[conta] = i
-                    print(lisnormal[conta])
+                    # print(lisnormal[conta])
 
             containdice += 1
         conta += 1
-        # ordena(lisordenar) #TODO LLAMAR FUNCION ORDENA
+    print(ordena(lisordenar))
 
 def ordena(lista):
-    print('h')
+    """
+    DOCSTRING
+    TITLE:          ORDENA LAS LISTAS Y RETORNA EN ORDEN
+    AUTHOR:         HUGO DANIEL BUSTAMANTE NIETO
+    DESCRIPTION:    ANALIZA EL PRIORITY Y MUEVE LOS DICCIONARIOS DE MAYOR A MENOS 
+    VERSION:        0.0.1 (Versiones nuevas.Actualizaciones.Correcciones)
+    NOTA:           DADAS LA LISTA ORDENA LISTAORDENAR
+    PARAMETROS:     LISTAORDENAR
+    """
+    contlisa = 0
+    contindex = 0
+    previous = 0
+    cont = 10
+
+    while cont >= 0:
+        contlisa= 0
+        contindex = 0
+        previous = 0
+
+        for dic in lista:
+            try:
+                for key in dic:
+                        if key == 'priority':
+                            # previous = previous + key
+                            a = dic[key] #YA ACCEDIMOS AL VALOR
+                            #Revisamos que el valor actual en priority sea menor que el anterior 
+                            if a >= previous:
+                                #Intercambiamos los valores de los diccionarios  
+                                indice = contindex - 1
+                                # b = lista[indice] # b = dic[key +1]
+                                # c = lista[contindex]                    
+                                lista[indice], lista[contindex] = lista[contindex], lista[indice]
+                            contindex += 1
+            except:
+                continue
+            previous = a
+            # print(a)
+            contlisa += 1
+        cont -= 1
+    
+    return(lista) #print(lista)
     
 
-junta(recorreParametros(criteria1, entry))
+junta(recorreParametros(criteria2, entry))
 
